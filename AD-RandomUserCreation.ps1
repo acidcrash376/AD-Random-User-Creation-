@@ -8,7 +8,6 @@
 $fnamelist = Get-Content 'C:\Users\Administrator\Documents\firstnames.txt' ## First Names list
 $lnamelist = Get-Content 'C:\Users\Administrator\Documents\surnames.txt' ## Surnames list
 $ranklist = Get-Content 'C:\Users\Administrator\Documents\ranks.txt'     ## Ranks list
-$ou = @("OU=Helpdesk,OU=IT,OU=Accounts,DC=domain,DC=com","OU=Finance,OU=Accounts,DC=domain,DC=com","OU=Sales,OU=Accounts,DC=domain,DC=com","OU=HR,OU=Accounts,DC=domain,DC=com")
 $password = "Pa55w0rd=01"                                                ## Set a default password
 #### Do not edit beyond this line
 
@@ -25,7 +24,7 @@ try
 
   While ($usercount -gt 0)
 {
-
+  $ou = @("OU=Helpdesk,OU=IT,OU=Accounts,DC=domain,DC=com","OU=Finance,OU=Accounts,DC=domain,DC=com","OU=Sales,OU=Accounts,DC=domain,DC=com","OU=HR,OU=Accounts,DC=domain,DC=com")
   $ou = (Get-Random -InputObject $ou)                                      ## Select a random OU from the list
 
   $firstname = Get-Random -InputObject $fnamelist                          ## Select a random First Name from the list
