@@ -67,11 +67,11 @@ try
 
 
       Write-Host "Creating user $username in $ou"                          ## Prints to console which user was created and in what OU they were placed
-      New-ADUser -Name $displayname -Displayname $displayname `            ## Creates the new user with the previous details
+      New-ADUser -Name $displayname -Displayname $displayname `
       -SamAccountName $username -UserPrincipalName $upn `
       -GivenName $firstname -Surname $surname `
       -Path $ou -Enabled $true -ChangePasswordAtLogon $false `
-      -AccountPassword (ConvertTo-SecureString $Password -AsPlainText -force)
+      -AccountPassword (ConvertTo-SecureString $Password -AsPlainText -force) ## Creates the new user with the previous details
 
 
       $usercount--                                                         ## Deducts 1 from the user counter 
